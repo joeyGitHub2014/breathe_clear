@@ -1,0 +1,254 @@
+  <html>
+    <head>
+        <title> Breathe Clear</title>
+  	<link href="../css/main.css" media="all" rel="stylesheet" type="text/css"/>
+  	<link href="../css/print.css" media="print" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="../js/ddaccordion.js">
+/***********************************************
+* Accordion Content script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+</script>
+<script type="text/javascript">
+ddaccordion.init({
+	headerclass: "submenuheader", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	//Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	togglehtml: ["prefix", "<img src='../images/plus.gif' class='statusicon' />", "<img src='../images/minus.gif' class='statusicon' />"],
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+</script>
+
+<style type="text/css">
+.glossymenu{
+margin-left: 250px;
+padding: 0px;
+width: 900px;  /*width of menu*/
+border: 1px solid #9A9A9A;
+border-bottom-width: 0;
+}
+.glossymenu a.menuitem{
+background: black url(../images/glossyback.gif) repeat-x bottom left;
+font: bold 14px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: white;
+display: block;
+position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+width: auto;
+padding: 3px ;
+padding-left: 10px;
+text-decoration: none;
+}
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+color: white;
+}
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+position: relative;
+top: 1px;
+left: 0px;
+border: none;
+}
+.glossymenu a.menuitem:hover{
+background-image: url(../images/glossyback2.gif);
+}
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+background: white;
+}
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.glossymenu div.submenu ul li{
+ border-bottom: 1px solid blue;  
+}
+.glossymenu div.submenu ul li a{
+display: block;
+font: normal 13px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: black;
+text-decoration: none;
+padding: 2px 0;
+padding-left: 10px;
+}
+.glossymenu div.submenu h3{
+font: normal 15px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: blask;
+}
+.glossymenu div.submenu ul li a:hover{
+background: #DFDCCB;
+color: red;
+}
+.glossymenu table.submenuheading , td , tr{
+font: normal 15px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: white;
+margin-left:10px;
+}
+</style>
+    </head>
+    <body> 
+      <img class="displayed" src="../images/breatheclear_logo.jpg" alt="Breathe Clear"  />
+      <div id = "navigation"  >
+      	 <span style="padding-left:200px">
+         <a href=add_patient.php>Add New Patient</a>
+	  &nbsp;
+	  &nbsp;
+         <a href=list_patient.php>List Patients</a>
+	  &nbsp;
+	  &nbsp;
+         <a href=list_allergens.php>Allergen List</a>
+	  &nbsp;
+	  &nbsp;
+	 <a class="small" href=new_user.php>Add User</a>
+	  &nbsp;
+	  &nbsp;
+	<a class="small" href=review_testdata.php>Export Patient List</a>
+	  &nbsp;
+	  &nbsp;
+         <a class="small" href=logout.php>Logout</a>
+	 </span>
+    </div>
+    <div id="main">
+    
+<script language="javascript" type="text/javascript">
+//-----------------
+// printpage
+//-----------------
+function printpage()
+{
+    window.print();
+    document.forms["frm_report"].submit;
+
+}
+//-----------------
+// saveReport
+//-----------------
+function saveReport(treat, patientId, anaCnt,name){
+    //alert(" patientId ---> "+patientId + " treat ---> " + treat + " name --->" + name + " anaCnt ---> " + anaCnt);
+	var ajax = new getXMLHttpRequestObject(); // this method is defined in the other Javascript file called 'ajax.js'
+	if (ajax) {
+		//if (document.getElementById(name)) { // 'document' refers to joe.html on which the html form is found
+		var url="save_report.php?treat="+treat+"&patientId="+patientId+"&anaCnt="+anaCnt;
+		ajax.open("get", url, true); // open Ajax with the GET method
+		ajax.onreadystatechange = function() { // register another annonymous handler function for the 'onreadystatechange' event of the ajax object
+		    myHandleResponseFunction(ajax,name); // this annonymous handler delegates the heavy task to my own function, passed to which is the 'ajax' object
+		    document.forms["frm_treatment"].submit();
+                }
+                ajax.send(null); //used when open Ajax with the GET method
+		return false;
+		//} // dom
+	} // ajax
+}
+//-------------------------
+// myHandleResponseFunction
+//-------------------------
+function myHandleResponseFunction(ajax, name) {
+	if (ajax.readyState == 4) {
+		if (ajax.status == 200) {
+			var joe_results = document.getElementById("update_result");
+			joe_results.innerHTML = ajax.responseText; //results.style.display = "block";
+                         //alert("ajax response --->" + ajax.responseText); // xml,json
+                         //     echo "<p>".$id."</p>" will be echo back
+		} // status if
+		else {
+			document.getElementById("frm_analysis").submit();
+		} // status else
+	} // readyState
+} // myHandleResponseFunction
+//-------------------------
+// updateField
+//-------------------------
+function updateField(id, value, name){
+    //alert("ID --->"+id + "Value --->" + value + "name --->" + name);
+    var queryString = "?id=" + id + "&value=" + value + "&name=" + name;
+    //alert("queryString --->" + queryString);
+	var ajax = new getXMLHttpRequestObject(); // this method is defined in the other Javascript file called 'ajax.js'
+	
+	if (ajax) {
+		//if (document.getElementById(name)) { // 'document' refers to joe.html on which the html form is found
+                //var treat = document.getElementById("treatment").value;
+                var patientId = document.getElementById("patientID").value;
+                var anaCnt = document.getElementById("analysisCount").value;
+		var url="update_analysis.php?id="+id+"&value="+value+"&name="+name+"&patientId="+patientId+"&anaCnt="+anaCnt;
+		ajax.open("get", url, true); // open Ajax with the GET method
+		ajax.onreadystatechange = function() { // register another annonymous handler function for the 'onreadystatechange' event of the ajax object
+		    myHandleResponseFunction(ajax,name); // this annonymous handler delegates the heavy task to my own function, passed to which is the 'ajax' object
+                }
+                ajax.send(null); //used when open Ajax with the GET method
+		return false;
+		//} // dom
+	} // ajax
+}
+//-------------------------
+// getXMLHttpRequestObject
+//-------------------------
+function getXMLHttpRequestObject()
+{
+    var ajax = false;
+    if (window.XMLHttpRequest) { // most mordern web browsers (IE7+, Firefox, Safari, Opera, Chrome)
+            ajax = new XMLHttpRequest(); // true now
+    }
+    else if (window.ActiveXObject) { // older IE web browsers
+            try {
+                    ajax = new ActiveXObject("Msxml2.XMLHTTP"); // true now
+            }
+            catch(e) {
+                    try { // much older IE web browsers
+                            ajax = new ActiveXObject("Microsoft.XMLHTTP"); // true now			
+                    }
+                    catch(e2) {
+                            window.alert("Get a mordern web browser please!");			
+                    }
+            }
+    }
+    return ajax;
+}
+</script>
+    <h2 class="title"> IMMUNOTHERAPY VIAL PREPARATION  </h2><h2 class="title"> INJECTION </h2></br>    <table class="entrynoborder"       width=800>
+                <tr>
+                    <th  style="text-align:center">Patient Information</th>
+                    <th>  </th>
+                </tr>
+		<tr border =0 ><td border=0px  width=200>Patient Name:</td>		<td border=0 ><b>aaaaa aaaa</b> </td></tr> 
+
+		<tr><td border=0 width=200>DOB:</td>					<td border=0><b>aa</b></td></tr>
+
+		<tr><td border=0 width=200>Gender:</td>				<td border=0><b>M</b></td></tr>
+
+		<tr><td border=0 width=200>Home ZIP Code:</td>		<td><b></b></td></tr>
+
+		<tr><td border=0 width=200>Work ZIP Code:</td>		<td border=0><b></b></td></tr>
+		<tr><td border=0 width=200>Tester:</td>		<td border=0><b></b></td></tr>
+		<tr><td border=0 width=200>Email:</td>		<td border=0><b></b></td></tr>
+
+		</table>        </br>
+        </br>
+    <form id ="frm_report"   method ="post">
+    
+    <table class="entry" width=800px>
+
+    <p id="page2"><input type="submit" id="save_report"   name ="save_report" value ="Save Report"      /><input type="submit" id="email_report"   name ="email_report" value ="Email Report"      /><input type="submit" id="print_report"   name ="print_report" value ="Print Report"   onclick="printpage()"   /><input type="hidden" id="treatment"     name="treatment" value="2" ><input type="hidden" id="patientID"      name="patientID" value="907" ><input type="hidden" id="analysisCount"  name="analysisCount" value="1" ><input type="hidden" id="allergic"  name="allergic" value="Array" ></p><h2 class="title"> VIAL A <h2><th>Antigen</th><th>Dilution</th><th>Quantity (cc)</th><th>Lot Number </th><th>Exp. Date</th></tr> <tr bgcolor = "#FFFFFF"     > <td>  European Dust Mite</td><td>  4</td><td>  0.2</td><td>  D28083011</td><td>  8-14</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Alternaria</td><td>  4</td><td>  0.2</td><td>  A01012612</td><td>  4-15</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Cockroach</td><td>  4</td><td>  0.2</td><td>  C69022112</td><td>  4-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Hormodendrum</td><td>  4</td><td>  0.2</td><td>  H02082411</td><td>  10-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Aspergillus Fumigatus</td><td>  4</td><td>  0.2</td><td>  A35030811 </td><td>  9-14</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Dog</td><td>  4</td><td>  0.2</td><td>  D05121411 </td><td>  4-15</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Cat</td><td>  4</td><td>  0.2</td><td>  C39011712</td><td>  1-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Pullularia</td><td>  4</td><td>  0.2</td><td>  P05051711 </td><td>  10-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Mucor Racemosus</td><td>  4</td><td>  0.2</td><td>  M34100311 </td><td>  5-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  American Dust Mite</td><td>  4</td><td>  0.2</td><td>  D36061511 </td><td>  6-14</td></tr><tr bgcolor = "#D2D2D2"><td>Total Antigen = </td><td></td><td>  2</td><td></td><td></td></tr><tr bgcolor = "#FFFFFF"><td>Glycerin 50% = </td><td></td><td>  1</td><td></td><td></td></tr><tr bgcolor = "#D2D2D2"><td>Phenol = </td><td></td><td>  2</td><td></td><td></td></tr></tr><tr bgcolor = "#FFFFFF"><td>Total Volume = </td><td></td><td>  5</td><td></td><td></td></tr></table><table class="entry" width=800px><h2 class="title"> VIAL B <h2><th>Antigen</th><th>Dilution</th><th>Quantity (cc)</th><th>Lot Number </th><th>Exp. Date</th> <tr bgcolor = "#FFFFFF"     > <td>  Atriplex mixture</td><td>  2</td><td>  0.2</td><td>  A41020811</td><td>  2-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Rough Pigweed</td><td>  4</td><td>  0.2</td><td>  P43022509</td><td>  2-13</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  California Black Walnut</td><td>  4</td><td>  0.2</td><td>  W07022608 </td><td>  2-14</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Western Ragweed</td><td>  4</td><td>  0.2</td><td>  R18011811</td><td>  10-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  California Sycamore</td><td>  4</td><td>  0.2</td><td>  S32020811</td><td>  10-14</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Russian Thistle</td><td>  4</td><td>  0.2</td><td>  R02031511 </td><td>  7-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Eucalyptus</td><td>  4</td><td>  0.2</td><td>  E09030508</td><td>  3-14</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Coastal Sage</td><td>  4</td><td>  0.2</td><td>  S34040208</td><td>   4-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Feather Mixture</td><td>  4</td><td>  0.2</td><td>  F11041211 </td><td>  7-14</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Standard Bermuda Grass</td><td>  4</td><td>  0.2</td><td>  G35110310</td><td>  11-13</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Seven Standard Grasses</td><td>  4</td><td>  0.2</td><td>  G35110310</td><td>  11-13</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Red Maple (Acer Rubrum) </td><td>  4</td><td>  0.2</td><td>  A35030811</td><td>  10-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  White Oak</td><td>  4</td><td>  0.2</td><td>  020031312</td><td>  4-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Olive</td><td>  4</td><td>  0.2</td><td>  O0910910  </td><td>  4-15</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Acacia Pollen</td><td>  4</td><td>  0.2</td><td>  A15033010</td><td>  1-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Kochia</td><td>  4</td><td>  0.2</td><td>  K01112111 </td><td>  1-15</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  Johnson Grass</td><td>  4</td><td>  0.2</td><td>  J04092308</td><td>  1-12</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Arizona Cypress</td><td>  4</td><td>  0.2</td><td>  C51092308 </td><td>  4-14</td></tr> <tr bgcolor = "#FFFFFF"     > <td>  West Cottonwood</td><td>  4</td><td>  0.2</td><td>  C50092711 </td><td>  4-15</td></tr> <tr bgcolor = "#D2D2D2"     > <td>  Chinese Elm</td><td>  4</td><td>  0.2</td><td>  E08122011 </td><td>  4-15</td></tr><tr><td>  </td></tr><tr bgcolor = "#D2D2D2"><td>Total Antigen = </td><td></td><td>  4</td><td> </td><td> </td></tr></tr><tr bgcolor = "#FFFFFF"><td>Glycerin 50% = </td><td></td><td>  1</td><td></td><td></td></tr><tr bgcolor = "#D2D2D2"><td>Phenol = </td><td></td><td>  0</td><td></td><td></td></tr></tr><tr bgcolor = "#FFFFFF"><td>Total Volume = </td><td></td><td>  5</td><td></td><td></td></tr>        </table>
+            </form>
+    </div>
+    <div id= "footer">Copyright 2012, Breathe Clear</div>
+    </body>
+    // Get the content that is in the buffer and put it in your file //
+?>
+    

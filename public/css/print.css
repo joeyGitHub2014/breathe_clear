@@ -1,0 +1,63 @@
+img {
+   page-break-inside:avoid;
+    border: 0;
+
+}
+#page2 {
+    font-size:15px;
+    padding-left:50px;
+}
+#dilInj {
+    font-size:12px;
+    padding-left:310px;
+}
+#dilDrp {
+    font-size:12px;
+    padding-left:200px;
+}
+a,
+#print,
+#save_report,
+#email_report  ,
+#print_report ,
+#submit_report ,
+#print_labels,
+#showAllergenPanelBtn,
+#selectAllergen,
+#addAllergenBtn,
+#allergenAddedMsg,
+#selCustHeader,
+.update_result,
+.message,
+.floatForm {
+    display:none;
+}
+table.entry {
+    margin-top:0px;
+    margin-left:50px;
+    padding:0px;}
+tr  {
+    page-break-inside:avoid;
+}
+table.patientreport {
+    border: none;
+    margin-left:50px;
+    text-align:center;
+    width:1000px;
+}
+table.entrynoborder {
+    margin-top:0px;
+    margin-left:50px;
+    padding:0px;
+}
+div.navigation {
+    display: none;
+}
+div.navigation {
+    display: none;
+}
+.print_red  {
+    font-weight: 800;
+    font-style: italic;
+    color: red !important;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <labels>
+    <name>joseph orlando</name>
+    <dob>2017-03-31</dob>
+    <treatment>2</treatment>
+    <lot>#jo19102017</lot>
+    <exp>02-16-2018</exp>
+    <refill>0</refill>
+    <numVials>2</numVials>
+    <ingredients/>
+    <vialA>Cat,Glycerine, Phenol</vialA>
+    <vialB>Wingscale,Western Ragweed,Olive,Glycerine,Phenol</vialB>
+    <vialC/>
+    <dilutionLevel>2nd Dilution</dilutionLevel>
+  </labels>
+</root>
