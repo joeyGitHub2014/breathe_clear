@@ -1,0 +1,326 @@
+/* #id = id
+  . = class
+  input.class = element.class
+*/
+/*------------- 
+    root      
+ -------------*/
+html {
+margin:0px;
+padding:0px;
+}
+body{height:100%;
+width:100%;
+margin:0px;
+padding:0px;
+border:0px;
+font-family:verdana, Arial, Helvetica, sans-serif;
+background:#FFFFFF;
+font-size:13px;
+line-height:15px;
+}
+
+img.displayed  {
+display:block;
+margin-left:auto;
+margin-right:auto ;
+border:none;
+}
+
+a{
+color:#ff0000;
+}
+p{color:#000000}
+td.bt{
+color:#000000;
+}
+table.margin20{
+margin-left:20px ;
+}
+table, tr,td  {
+border-collapse:collapse;
+margin-left:0px ;
+vertical-align:top;
+font-size: 13px;
+line-height:15px;
+}
+table.allergenInput, tr,td  {
+border-collapse: collapse;
+margin-left:40px ;
+vertical-align:top;
+font-size: 13px;
+line-height:15px;
+}
+/*background:#e1f9fd;*/
+/* #main {min-height:600px; width: 100%;background: #EEE4B9;padding:2em;}*/
+
+#main {min-height:100%;
+width: 100%;
+background:#f5f5f5;
+padding:0;
+}
+
+#comment{height:13px;
+margin-left:20px;
+padding:0px;
+text-align:left;
+margin-left:20px
+}
+#errors{height:12px;  margin:0px; padding:0px; text-align:left;  color:#fbfbfb}
+td.errors2{height:22px;  margin:200px; padding:0px; text-align: center;  color:#ff0000}
+
+#pagination .selected {font-weight:bold; color: #8d0d19;}
+#pagination .notselected {font-weight:lighter ; color: #8d0d19;}
+
+#header{height:40px; text-align:left; margin:0px; padding-bottom:0;     background:#1a446c; color:#d4e6f4;} 
+#header h1{padding:1em; margin:0px;text-align:center;}
+
+h2{
+color:#0fbdf0;
+padding:1em;
+padding-bottom:0;
+margin:0px;
+}
+/*#main{height:600px; width:100%;  margin:0px; padding:0px;   background:#ffffff; }*/
+
+#structure{
+height:300px;
+width:100%;
+}
+
+#footer{height:1em;  margin:0px; padding:1em; text-align:center;
+    background: rgb(184,225,252); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(184,225,252,1) 0%, rgba(169,210,243,1) 10%, rgba(144,186,228,1) 25%, rgba(144,188,234,1) 37%, rgba(144,191,240,1) 50%, rgba(107,168,229,1) 51%, rgba(162,218,245,1) 83%, rgba(189,243,253,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(184,225,252,1)), color-stop(10%,rgba(169,210,243,1)), color-stop(25%,rgba(144,186,228,1)), color-stop(37%,rgba(144,188,234,1)), color-stop(50%,rgba(144,191,240,1)), color-stop(51%,rgba(107,168,229,1)), color-stop(83%,rgba(162,218,245,1)), color-stop(100%,rgba(189,243,253,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd',GradientType=0 ); /* IE6-9 */
+
+
+}
+table.bordered tr th,
+table.bordered  tr td {
+    border: 1px solid #000000;
+}
+
+table.allergen {
+table-layout: fixed;
+margin-top:0px;
+margin-left:250px;
+padding:0px;
+}
+table.allergen tr th{    padding:0em;  text-align: center;color:#000000;
+    background: rgb(184,225,252); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(184,225,252,1) 0%, rgba(169,210,243,1) 10%, rgba(144,186,228,1) 25%, rgba(144,188,234,1) 37%, rgba(144,191,240,1) 50%, rgba(107,168,229,1) 51%, rgba(162,218,245,1) 83%, rgba(189,243,253,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(184,225,252,1)), color-stop(10%,rgba(169,210,243,1)), color-stop(25%,rgba(144,186,228,1)), color-stop(37%,rgba(144,188,234,1)), color-stop(50%,rgba(144,191,240,1)), color-stop(51%,rgba(107,168,229,1)), color-stop(83%,rgba(162,218,245,1)), color-stop(100%,rgba(189,243,253,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd',GradientType=0 ); /* IE6-9 */
+  }
+table.allergen  td {  border: 1px solid #000000; color:#000000;}
+table.entry {margin-top:0px;  margin-left:300px; padding:0px;}
+table.entry tr th{    padding:0em;  text-align: center;color:#000000;
+    background: rgb(184,225,252); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(184,225,252,1) 0%, rgba(169,210,243,1) 10%, rgba(144,186,228,1) 25%, rgba(144,188,234,1) 37%, rgba(144,191,240,1) 50%, rgba(107,168,229,1) 51%, rgba(162,218,245,1) 83%, rgba(189,243,253,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(184,225,252,1)), color-stop(10%,rgba(169,210,243,1)), color-stop(25%,rgba(144,186,228,1)), color-stop(37%,rgba(144,188,234,1)), color-stop(50%,rgba(144,191,240,1)), color-stop(51%,rgba(107,168,229,1)), color-stop(83%,rgba(162,218,245,1)), color-stop(100%,rgba(189,243,253,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd',GradientType=0 ); /* IE6-9 */
+  }
+table.entry    td {  border: 1px solid #000000; color:#000000;}
+
+
+table.entrynoborder {margin-top:0px;  margin-left:300px; padding:0px;}
+table.entrynoborder tr th{  margin-left:300px;  padding:0em;  text-align: center;color:#000000;
+    background: rgb(184,225,252); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(184,225,252,1) 0%, rgba(169,210,243,1) 10%, rgba(144,186,228,1) 25%, rgba(144,188,234,1) 37%, rgba(144,191,240,1) 50%, rgba(107,168,229,1) 51%, rgba(162,218,245,1) 83%, rgba(189,243,253,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(184,225,252,1)), color-stop(10%,rgba(169,210,243,1)), color-stop(25%,rgba(144,186,228,1)), color-stop(37%,rgba(144,188,234,1)), color-stop(50%,rgba(144,191,240,1)), color-stop(51%,rgba(107,168,229,1)), color-stop(83%,rgba(162,218,245,1)), color-stop(100%,rgba(189,243,253,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd',GradientType=0 ); /* IE6-9 */
+  }
+table.entrynoborder td {margin-left:300px; border: none; color:#000000;}
+
+table.patientreport {border: none; margin-left:150px; text-align:center; width:900px}
+table.patientreport tr {border: none; padding:0em; text-align:left; color:#000000;  }
+table.patientreport td {border: none; padding:0em; text-align:left; color:#000000;  }
+table.patientreport th {border: none; padding:0em; text-align:center; color:#000000;  }
+
+/* navigation*/
+.navigation{  padding:1em; text-align: center; color:#d4e6f4;
+background: rgb(184,225,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(184,225,252,1) 0%, rgba(169,210,243,1) 10%, rgba(144,186,228,1) 25%, rgba(144,188,234,1) 37%, rgba(144,191,240,1) 50%, rgba(107,168,229,1) 51%, rgba(162,218,245,1) 83%, rgba(189,243,253,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(184,225,252,1)), color-stop(10%,rgba(169,210,243,1)), color-stop(25%,rgba(144,186,228,1)), color-stop(37%,rgba(144,188,234,1)), color-stop(50%,rgba(144,191,240,1)), color-stop(51%,rgba(107,168,229,1)), color-stop(83%,rgba(162,218,245,1)), color-stop(100%,rgba(189,243,253,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd',GradientType=0 ); /* IE6-9 */
+   
+   
+    }
+.navigation {padding-left:280px}
+.navigation a{   padding-right:20px;  font-size:1.5em;  color:#3B3B3B; text-decoration:none  }
+.navigation a.small{   font-size:1em;  color:#3B3B3B; text-decoration:none  }
+a:hover{
+    text-decoration: none;
+    color: red;
+}
+.navigation a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+#ul.subjects{   padding-left: 0;    list-style:none; } 
+#ul.pages{  padding-left: 2em;    list-style:square; } 
+.selected{   font-weight:bold; } 
+/* page content */
+#page{font-size:16px; text-align: center;   color:#000000; padding-left:2em; vertical-align:left;    }
+#page2{font-size:15px;    padding-left:300px;      }
+#dilInj{font-size:12px;    padding-left:557px;      }
+#dilDrp{font-size:12px;    padding-left:480px;      }
+
+h2.title {  text-align:center; color:#0fbdf0;  }
+h3.title { font-size:11px;  text-align:center; color:#000000;  }
+h4.title { font-size:16px;  text-align:center; color:#000000;  }
+
+h3.error {  text-align:center; color:rgb(255,0,0)}
+
+#page h2{ color:#0fbdf0;   margin-top:1em; } 
+#page h3{ color:#0fbdf0; }
+
+p.outset {border-style:inset;}
+/*-------------*/
+/*   headder   */
+/*-------------*/
+#content-info { clear: both; position: relative; margin-left: 150}
+#content-info > .container { padding: 10px 0px 10px 10px; text-align: center}
+
+#content-info ul.menu { margin: 0px; padding: 0; list-style-type: none; }
+#content-info ul.menu li { display: inline; margin-right: 1em; }
+
+#content-info p.copy small { font-size: 1em; }
+.address {padding-left: 130px;
+	display: inline-block;
+        width:20%;
+	color: #333;
+}
+/* -------------
+   input textarea
+   ------------- */
+form {
+    border: 1px rgb(0,0,0);
+}
+input, textarea {  
+    padding: 5px;  
+    border: solid 1px #E5E5E5;  
+    outline: 20;  
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;  
+    width: auto; 
+    background: #FFFFFF url('bg_form.png') left top repeat-x;  
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
+    box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    }  
+textarea {  
+    width: 600px;  
+    max-width: 600px;  
+    height: 150px;  
+    line-height: 150%;  
+    }  
+input:hover,
+textarea:hover,  
+input:focus,
+textarea:focus {  
+    border-color: #C9C9C9;  
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
+    }  
+.form label {  
+    margin-left: 10px;  
+    color: #000000;  
+    }  
+.submit input {  
+    width: auto;  
+    padding: 2px 5px;  
+    background: #617798;  
+    border: 0;  
+    font-size: 12px;  
+    color: #FFFFFF;  
+    -moz-border-radius: 5px;  
+    -webkit-border-radius: 5px;  
+}
+/* --------------
+   patient listing 
+   -------------- */
+.glossymenu{
+margin-left: 250px;
+padding: 0px;
+width: 900px;  /*width of menu*/
+border: 1px solid #9A9A9A;
+border-bottom-width: 0;
+}
+.glossymenu a.menuitem{
+background: black url(../images/glossyback.gif) repeat-x bottom left;
+font: bold 14px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: white;
+display: block;
+position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+width: auto;
+padding: 3px ;
+padding-left: 10px;
+text-decoration: none;
+}
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+color: white;
+}
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+position: relative;
+top: 1px;
+left: 0px;
+border: none;
+}
+.glossymenu a.menuitem:hover{
+background-image: url(../images/glossyback2.gif);
+}
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+background: white;
+}
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.glossymenu div.submenu ul li{
+ border-bottom: 1px solid blue;  
+}
+.glossymenu div.submenu ul li a{
+display: block;
+font: normal 13px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: black;
+text-decoration: none;
+padding: 2px 0;
+padding-left: 10px;
+}
+.glossymenu div.submenu h3{
+font: normal 15px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: blask;
+}
+.glossymenu div.submenu ul li a:hover{
+background: #DFDCCB;
+color: red;
+}
+.glossymenu table.submenuheading , td , tr{
+font: normal 15px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+color: white;
+margin-left:10px;
+}

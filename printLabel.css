@@ -1,0 +1,142 @@
+#canvas {
+	border-top: 1px solid #000000; 
+	border-left: .5px solid #000000; 
+	width :740px;
+	height :958px;
+}
+
+.label {
+ 	position: absolute;
+	width: 246.00px; 
+	height: 137.00px;
+ 	line-height: 		137px;
+    cursor:		 		move;
+    z-index: 			10;
+    background-color: 	#ffffff;
+    color: #000;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+ #label0 {
+ 	left : 0px;
+ 
+ }
+ 
+ #label1 {
+ 	z-index:11;
+ 	left : 246.66px; 
+}
+
+ #label2 {
+ 	z-index: 12;
+	left : 492px;
+}
+
+ #label3 {
+ 	background-repeat: no-repeat;
+ 	z-index: 13;
+	left: 0px;
+	top : 137px; 
+}
+
+.rotatedText {
+	position: absolute;
+	text-align: left;
+	font-size: 11px;
+	line-height: 11px;
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Safari */
+    transform: rotate(-90deg); 
+    font-family: 'Roboto', sans-serif;
+}
+ 
+.label .ingredants {
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+	position: absolute;
+	top: 17px;
+	left: 155px;
+	width: 85px; 
+	text-align: left;
+	font-size: 8px;
+	word-wrap: break-word;
+	line-height: 8px;
+}
+
+.label .exp {
+	position: absolute;
+	text-align: left;
+	font-size: 11px;
+	line-height: 11px;
+	top: 125px;
+	left: 145px;
+	width :105px; 
+}
+
+.label .dl {
+	position: absolute;
+	text-align: left;
+	font-size: 8px;
+	line-height: 8px;
+	top: 80px;
+	left: 90px;
+	width :50px; 
+}
+
+.label .name {
+	top: 70px;
+	left: -46px;
+  	width :105px; 
+}
+
+.label  .dob {
+	top: 95px;
+	left: -12px;
+  	width :60px; 
+}
+
+.label .lotNum {
+	top: 35px;
+	left: -12px;
+  	width :60px;
+
+}
+.cell {
+	border-right: 1px solid #000000; 
+	border-bottom: 1px solid #000000; 
+	float: left; 
+	width: 246.00px; 
+	height: 137.00px;
+ }
+.prtBtn{
+	position: absolute; 
+	top: 0px; 
+}
+@media print  { 
+ 	#canvas { 
+ 		margin:0px;
+ 		width :750px;
+		height :958px;
+ 		border: none; 
+ 	 	display:block; 
+
+	 	left:0px;
+ 	} 
+	#label0, #label1,#label2, #label3 {
+		border: none !important; 
+ 	 	position: fixed;
+ 	 	width: 246.00px; 
+		height: 137.00px;
+	}
+
+	.cell {
+		display: none;
+	 }
+	 .prtBtn{
+	 	 	 	position: absolute; 
+	 	top: 0px; 
+	 	display: none;
+	 }
+	 
+  	  /* @page { size:8.5in 11in; margin: .75in } */
+ 
+} 
