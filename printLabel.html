@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height">
+	<link href="../css/bootstrap/css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>
+	<link href="../css/printLabel.css"  rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body     style ="max-width: 100%; max-height: 100%;"/>
+	<div id="container" >
+		<div style="background:lightblue" id="canvas" > 
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>	
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>	
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>	
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>	
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>	
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>	
+			<div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+			</div>
+ 
+  		 	<div class ="label"  id="label0" >
+ 				<div class="yellow ingredants"></div> 
+				<div class="yellow rotatedText name"> </div>
+				<div class="yellow rotatedText dob"> </div>
+				<div class="yellow rotatedText lotNum"> </div>
+				<div class="yellow exp">EXP:  </div>
+				<div class="yellow  dl"></div>				
+			</div>  
+
+  		 	<div class ="label"  id="label1"> 
+				<div class="green ingredants"></div> 
+				<div class="green rotatedText name"> </div>
+				<div class="green rotatedText dob"> </div>
+				<div class="green rotatedText lotNum"> </div>
+				<div class="green exp">EXP: </div>
+				<div class="green dl"></div>				
+			</div> 
+
+  		 	<div class ="label"  id="label2"> 
+				<div class="red ingredants"></div> 
+				<div class="red rotatedText name"> </div>
+				<div class="red rotatedText dob"> </div>
+				<div class="red rotatedText lotNum"> </div>
+				<div class="red exp">EXP:  </div>
+				<div class="red dl"></div>				
+			</div> 
+
+  		 	<div class ="label"  id="label3"> 
+				<div class="ingredants"></div> 
+				<div class="rotatedText name"> </div>
+				<div class="rotatedText dob"> </div>
+				<div class="rotatedText lotNum"> </div>
+				<div class="exp">EXP:  </div>
+				<div class="dl"></div>				
+			</div> 
+
+ 		</div>
+ 
+	</div>
+	<button class = "prtBtn" onclick="window.print(); return false;">
+		<b>PRINT</b>
+	</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/CSSPlugin.min.js""></script>
+<script src="../js/printLabels.js"></script>
+<script>
+	window.onload = function(){
+ 		getLabel()
+ 	}
+</script>
+</html>
