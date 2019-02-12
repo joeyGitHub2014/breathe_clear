@@ -96,7 +96,7 @@
     // treatment types array NYD =>0, Drops=>1, Injection=>2
     $treatmentArray = array('','','');
     $treatmentArray[$treatment] = 'checked';
-    // injection level array 0 => 1st Dilution , 1=>2nd Dilution   2=>3rd Dilution, 3=> 4th Dilution
+    // injection level array 0 => 4th Dilution, 1=>3rd Dilution, 2=>2nd Dilution, 3 => 1st Dilution     
     $injectionLevelArray = array('','','','');
     $dilution = Analysis::get_dilutionLevel($patientId,$analysisCount);
     $injectionLevelArray[$dilution] = 'checked';
