@@ -46,18 +46,22 @@ class DatabaseObject{
     public static function find_by_sql($sql=""){
         global $database;
         $result_set = $database->query($sql);
+
         $object_array = array();
 
         while($row = $database->fetch_array($result_set)){
             $object_array[]= self::instantiate($row);
+
         }
         // returns an array of objects
+
         return $object_array;
     }
     private static function instantiate($record){
         $class_name = get_called_class();
         $object = new $class_name;
         foreach($record as $attribute=> $value){
+
             if($object->has_attribute($attribute)){
                 $object->$attribute  = $value;
             }
