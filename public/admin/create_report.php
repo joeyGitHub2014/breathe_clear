@@ -14,14 +14,12 @@ $allergicCockroch = array();
 $custom_allergens_list = array();
 $custom_allergens_list = null;
 
+$dwoo = new Dwoo\Core();
 
-print_r($_POST);
-echo("</br>");
-print_r($_GET);
 
 if (isset($_POST['submit_report']) || !empty($_POST['print_report']) ) {
     $patientID = $_POST['patientID'];
-    $treatment = $_POST['treatmentType'];
+    $treatment = $_POST['treatment'];
     $analysisCount = $_POST['analysisCount'];
 }
 elseif(!empty($_GET)) {
@@ -52,6 +50,8 @@ $vials = 0;
 $vialA = "";
 $vialB = "";
 $vialC= "";
+$dilutionLevel = "";
+$labelAr = []; 
 
 Allergen::set_allergen_table();
 $total_count = Allergen::count_all();
@@ -185,7 +185,7 @@ inlcudeLayoutTemplet("admin_header.php");
         /* echo  "<input type=\"submit\" id=\"email_report\"   name =\"email_report\" value =\"Email Report\"  onclick=\"emailReport()\"     />"; */
         echo  "<input type=\"submit\" id=\"print_report\"   name =\"print_report\" value =\"Print Report\"   onclick=\"printpage()\"   />";
 
-        echo  "<input type=\"hidden\" id=\"treatment\"     name=\"treatmentType\" value=\"{$treatment}\" >";
+        echo  "<input type=\"hidden\" id=\"treatment\"     name=\"treatment\" value=\"{$treatment}\" >";
         echo  "<input type=\"hidden\" id=\"patientID\"      name=\"patientID\" value=\"{$patientID}\" >";
         echo  "<input type=\"hidden\" id=\"analysisCount\"  name=\"analysisCount\" value=\"{$analysisCount}\" >";
        // echo  "<input type=\"hidden\" id=\"allergic\"  name=\"allergic\" value=\"{$allergic}\" >";
@@ -803,7 +803,7 @@ inlcudeLayoutTemplet("admin_header.php");
         ?>
         </table>
         <?php
-            $doc = new DOMDocument('1.0','UTF-8');
+           /* $doc = new DOMDocument('1.0','UTF-8');
             $doc->formatOutput = true;
             $root = $doc->createElement('root');
             $root = $doc->appendChild($root);
@@ -819,30 +819,41 @@ inlcudeLayoutTemplet("admin_header.php");
             $vA = $doc->createElement('vialA',$vialA);
             $vB = $doc->createElement('vialB',$vialB);
             $vC = $doc->createElement('vialC',$vialC);
+             */
             switch ($analysis->dilutionLevel){
                 case 0:
-                    $dil = $doc->createElement('dilutionLevel','1st Dilution');
+                    $dilutionLevel = '1st Dilution';
+
+                    //$dil = $doc->createElement('dilutionLevel','1st Dilution');
                     break;
                 case 1:
-                    $dil = $doc->createElement('dilutionLevel','2nd Dilution');
+                    $dilutionLevel = '2nd Dilution';
+
+                    //$dil = $doc->createElement('dilutionLevel','2nd Dilution');
                     break;
                 case 2:
-                    $dil = $doc->createElement('dilutionLevel','3rd Dilution');
+                       $dilutionLevel = '3rd Dilution';
+
+                    //$dil = $doc->createElement('dilutionLevel','3rd Dilution');
                     break;
                 case 3:
-                    $dil = $doc->createElement('dilutionLevel','4th Dilution');
+                    $dilutionLevel = '4th Dilution';
+
+                    //$dil = $doc->createElement('dilutionLevel','4th Dilution');
                     break;
                 default:
-                    $dil = $doc->createElement('dilutionLevel','1st Dilution');
+                    $dilutionLevel = '1st Dilution';
+
+                   // $dil = $doc->createElement('dilutionLevel','1st Dilution');
                     break;
-            }
+            } 
 
             Analysis::set_analysis_table();
             $ref = Analysis::get_refill($patientID,$analysisCount);
             if ($ref == null){
                 $ref = 0;
             }
-            $refill = $doc->createElement('refill',$ref);
+            /*$refill = $doc->createElement('refill',$ref);
             $labels->appendChild($name);
             $labels->appendChild($dob);
             $labels->appendChild($treat);
@@ -857,7 +868,25 @@ inlcudeLayoutTemplet("admin_header.php");
             $labels->appendChild($vB);
             $labels->appendChild($vC);
             $labels->appendChild($dil);
-        $doc->save("../xml/label.xml") ;
+            $doc->save("../xml/label.xml") ;*/
+            $name = $firstname.' '.$lastname;
+            $expD =  date('m-d-Y', strtotime('120 days'));
+
+            $labelArr = [
+                    "name"        => $name,
+                    "dob"         => $dateofbirth,
+                    "treatment"   => $treatment,
+                    "lotNum"      => $lotNumber,
+                    "exp"         => $expD,
+                    "refill"      => $ref,
+                    "ingredients" => $ingredients,
+                    "vialA"       => $vialA,
+                    "vialB"       => $vialB,
+                    "vialC"       => $vialC,
+                    "dilutionLevel" => $dilutionLevel ];
+            
+            file_put_contents('../html/label.json', json_encode($labelArr), LOCK_EX);
+
             if ($treatment == 1 || $treatment == 0  ){
                 if (!empty($allergic)){
                     echo "</br>";
@@ -902,6 +931,9 @@ inlcudeLayoutTemplet("admin_header.php");
         ?>
     </form>
     </div>
-    <?php inlcudeLayoutTemplet('footer.php');?>
+
+    <?php 
+
+    inlcudeLayoutTemplet('footer.php');?>
 
     

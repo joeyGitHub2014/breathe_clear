@@ -152,7 +152,7 @@ function SetButtonStatus(text)
 
 
     <?php
-    echo  "<input type=\"hidden\" name=\"treatmentType\" value=\"{$treatment}\" >";
+    echo  "<input type=\"hidden\" name=\"treatment\" value=\"{$treatment}\" >";
     echo  "<input type=\"hidden\" name=\"patientID\" value=\"{$patientId}\" >";
     echo  "<input type=\"hidden\" name=\"analysisCount\" value=\"{$analysisCount}\" >";
 
