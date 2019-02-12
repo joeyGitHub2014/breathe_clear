@@ -15,7 +15,7 @@ class Patient extends DatabaseObject{
     public $email;
     public $tester;
     public $errors = array();
-    public  $testit = 4;
+    public $testit = 4;
     //-------------------------
     //function set_patient_table
     //-------------------------
