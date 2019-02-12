@@ -4,8 +4,8 @@ $message ="";
 if ($session->is_logged_in()){
     redirectTo("index.php");
 }
-
-if(isset($_POST['submit'])){
+ 
+ if(isset($_POST['submit'])){
     $username = trim( $_POST['username'] );
     $password = trim( $_POST['password'] );
     // check database to see if username/password exist
@@ -53,5 +53,5 @@ if(isset($_POST['submit'])){
         </form>
 <?php inlcudeLayoutTemplet('footer.php');
 
-var_dump(PDO::getAvailableDrivers());
+//var_dump(PDO::getAvailableDrivers());
 ?>
