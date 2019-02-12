@@ -1,10 +1,15 @@
 // Util functions
 // Open flash file
 function openLabel() {
-    var theWin = "'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=612,height=792'";
-	littleWin = window.open('../swf/labels.swf','opened',theWin);
-	littleWin.resizeTo(612,792);
-	littleWin.focus();
+   // var theWin = "'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=612,height=792'";
+//	littleWin = window.open('../swf/labels.swf','opened',theWin);
+	//littleWin.resizeTo(612,792);
+	//littleWin.focus();
+
+    var theWin = "'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=812,height=992'";
+    littleWin = window.open("../html/printLabel.html","opened",theWin);
+    window.resizeTo(812,992);
+    littleWin.focus();
 }
 
 function printpage() {

@@ -6,7 +6,7 @@
     <h2 class="title" > Edit Entry Record </h2>
 
     <form id ="frm_treatment" action="create_report.php" method ="post">
-        <input type="hidden" id="treatment"             name="treatmentType" value="{$entryRecordInfo.treatment}">
+        <input type="hidden" id="treatment"             name="treatment" value="{$entryRecordInfo.treatment}">
         <input type="hidden" id="treatPatientID"        name="patientID" value="{$entryRecordInfo.patientId}">
         <input type="hidden" id="treatAnalysisCount"    name="analysisCount" value="{$entryRecordInfo.analysisCount}">
         <div class=" row panel"  >
@@ -16,16 +16,16 @@
                 Type of Treatment:
             </div>
             <div class="col-sm-2">
-                <input type="radio"  name="treatment" value="nyd"       {$treatment[0]} onclick="setButtonStatus(value)" /> Not Yet Determined
+                <input type="radio"  name="treatmentType" value="nyd"       {$treatment[0]} onclick="setButtonStatus(value)" /> Not Yet Determined
             </div>
             <div class="col-sm-2">
-                <input type="radio"  name="treatment" value="drops"     {$treatment[1]} onclick="setButtonStatus(value)" /> Drops:
+                <input type="radio"  name="treatmentType" value="drops"     {$treatment[1]} onclick="setButtonStatus(value)" /> Drops:
                 {if $entryRecordInfo.treatment eq 1}
                     <input type="checkbox" {$entryRecordInfo.refillChecked}  id="check1"    onclick="update_refill()"  /> Refill
                 {/if}
             </div>
             <div class="col-sm-6">
-                <input type="radio"  name="treatment" value="injection" {$treatment[2]} onclick="setButtonStatus(value)" /> Injection:
+                <input type="radio"  name="treatmentType" value="injection" {$treatment[2]} onclick="setButtonStatus(value)" /> Injection:
                 {if $entryRecordInfo.treatment eq 2}
                     <input type="radio" id="refill0" {$injectionLevel[0]}  name="refill" value="0" onclick="updateDilutionLevel(value)" /> 1st Dilution
                     <input type="radio" id="refill1" {$injectionLevel[1]}  name="refill" value="1" onclick="updateDilutionLevel(value)" /> 2nd Dilution
